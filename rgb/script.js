@@ -25,7 +25,7 @@ function updateColor() {
 }
 
 left.onmousedown = function () {
- switch (current) {
+  switch (current) {
     case 'r':
       r_r = Math.floor((r_l + r_r) / 2);
       current = 'g';
