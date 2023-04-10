@@ -1,9 +1,6 @@
-# binary-search-on-color
+# [Binary Search on Color](https://tinnamchoi.github.io/binary-search-on-color/)
 
-mfw I'm too perfectionist to just pick a color that looks right and don't feel comfortable unless I get the exact numbers
+* Using the binary search algorithm to find the color that is closest to the user's desired color with accurate RGB values
+* An attempt to combat indecisiveness when it comes to choosing colors
 
-I've wanted to do this for years now but never really had the prerequisite knowledge needed until recently
-
-Images modified from WikiMedia Commons:
-* [RGB](https://commons.wikimedia.org/wiki/File:RGB_color_cube.svg)
-* [HSL](https://commons.wikimedia.org/wiki/File:Hsl-hsv_models.svg)
+Images sources: [RGB](https://commons.wikimedia.org/wiki/File:RGB_color_cube.svg), [HSL](https://commons.wikimedia.org/wiki/File:Hsl-hsv_models.svg)
