@@ -11,10 +11,11 @@ body {
   font-family: 'Rubik', sans-serif;
   display: grid;
   grid-template-columns: 50vw 50vw;
-  grid-template-rows: 15vh 85vh;
+  grid-template-rows: 15vh 70vh 15vh;
   grid-template-areas:
     "header header"
-    "rgb hsl";
+    "rgb hsl"
+    "footer footer";
 }
 
 a {
@@ -71,4 +72,12 @@ div.containee {
 div.containee:hover {
   cursor: pointer;
   background-color: #1a1f2e;
+}
+
+footer {
+  grid-area: footer;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
