@@ -11,6 +11,9 @@ var left = document.getElementById("left");
 var right = document.getElementById("right");
 
 function updateColor() {
+  if (r_l == r_r && g_l == g_r && b_l == b_r) {
+    window.location.href = '../result/index.html?type=rgb&r=' + r_l + '&g=' + g_l + '&b=' + b_l;
+  }
   if (current == 'r') {
     left.style.backgroundColor = 'rgb(' + r_l + ', ' + (g_l + g_r) / 2 + ', ' + (b_l + b_r) / 2 + ')';
     right.style.backgroundColor = 'rgb(' + r_r + ', ' + (g_l + g_r) / 2 + ', ' + (b_l + b_r) / 2 + ')';
@@ -21,6 +24,7 @@ function updateColor() {
     left.style.backgroundColor = 'rgb(' + (r_l + r_r) / 2 + ', ' + (g_l + g_r) / 2 + ', ' + b_l + ')';
     right.style.backgroundColor = 'rgb(' + (r_l + r_r) / 2 + ', ' + (g_l + g_r) / 2 + ', ' + b_r + ')';
   }
+  console.log('l:', r_l, g_l, b_l, ', r:', r_r, g_r, b_r);
   console.log(left.style.backgroundColor, right.style.backgroundColor);
 }
 
