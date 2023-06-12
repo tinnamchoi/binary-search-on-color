@@ -13,6 +13,9 @@ var right = document.getElementById("right");
 var first = true;
 
 function updateColor() {
+  if (h_l == h_r && s_l == s_r && l_l == l_r) {
+    window.location.href = '../result/index.html?type=hsl&h=' + h_l + '&s=' + s_l + '&l=' + l_l;
+  }
   if (current == 'h') {
     left.style.backgroundColor = 'hsl(' + h_l + 'deg, ' + (s_l + s_r) / 2 + '%, ' + (l_l + l_r) / 2 + '%)';
     right.style.backgroundColor = 'hsl(' + h_r + 'deg, ' + (s_l + s_r) / 2 + '%, ' + (l_l + l_r) / 2 + '%)';

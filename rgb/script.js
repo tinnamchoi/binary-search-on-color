@@ -24,7 +24,6 @@ function updateColor() {
     left.style.backgroundColor = 'rgb(' + (r_l + r_r) / 2 + ', ' + (g_l + g_r) / 2 + ', ' + b_l + ')';
     right.style.backgroundColor = 'rgb(' + (r_l + r_r) / 2 + ', ' + (g_l + g_r) / 2 + ', ' + b_r + ')';
   }
-  console.log('l:', r_l, g_l, b_l, ', r:', r_r, g_r, b_r);
   console.log(left.style.backgroundColor, right.style.backgroundColor);
 }
 
