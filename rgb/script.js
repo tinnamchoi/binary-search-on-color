@@ -14,16 +14,32 @@ function updateColor() {
   if (r_l == r_r && g_l == g_r && b_l == b_r) {
     window.location.href = '../result/index.html?type=rgb&r=' + r_l + '&g=' + g_l + '&b=' + b_l;
   }
+  var left_r = r_l;
+  var left_g = g_l;
+  var left_b = b_l;
+  var right_r = r_r;
+  var right_g = g_r;
+  var right_b = b_r;
   if (current == 'r') {
-    left.style.backgroundColor = 'rgb(' + r_l + ', ' + (g_l + g_r) / 2 + ', ' + (b_l + b_r) / 2 + ')';
-    right.style.backgroundColor = 'rgb(' + r_r + ', ' + (g_l + g_r) / 2 + ', ' + (b_l + b_r) / 2 + ')';
+    left_g = Math.round((g_l + g_r) / 2);
+    left_b = Math.round((b_l + b_r) / 2);
+    right_g = Math.round((g_l + g_r) / 2);
+    right_b = Math.round((b_l + b_r) / 2);
   } else if (current == 'g') {
-    left.style.backgroundColor = 'rgb(' + (r_l + r_r) / 2 + ', ' + g_l + ', ' + (b_l + b_r) / 2 + ')';
-    right.style.backgroundColor = 'rgb(' + (r_l + r_r) / 2 + ', ' + g_r + ', ' + (b_l + b_r) / 2 + ')';
+    left_r = Math.round((r_l + r_r) / 2);
+    left_b = Math.round((b_l + b_r) / 2);
+    right_r = Math.round((r_l + r_r) / 2);
+    right_b = Math.round((b_l + b_r) / 2);
   } else if (current == 'b') {
-    left.style.backgroundColor = 'rgb(' + (r_l + r_r) / 2 + ', ' + (g_l + g_r) / 2 + ', ' + b_l + ')';
-    right.style.backgroundColor = 'rgb(' + (r_l + r_r) / 2 + ', ' + (g_l + g_r) / 2 + ', ' + b_r + ')';
+    left_r = Math.round((r_l + r_r) / 2);
+    left_g = Math.round((g_l + g_r) / 2);
+    right_r = Math.round((r_l + r_r) / 2);
+    right_g = Math.round((g_l + g_r) / 2);
   }
+  left.style.backgroundColor = 'rgb(' + left_r + ',' + left_g + ',' + left_b + ')';
+  right.style.backgroundColor = 'rgb(' + right_r + ',' + right_g + ',' + right_b + ')';
+  left.getElementsByTagName("h2")[0].innerHTML = left.style.backgroundColor;
+  right.getElementsByTagName("h2")[0].innerHTML = right.style.backgroundColor;
   console.log(left.style.backgroundColor, right.style.backgroundColor);
 }
 
