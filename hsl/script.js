@@ -15,24 +15,33 @@ var first = true;
 function updateColor() {
   if (h_l == h_r && s_l == s_r && l_l == l_r) {
     window.location.href = '../result/index.html?type=hsl&h=' + h_l + '&s=' + s_l + '&l=' + l_l;
+    console.log("end");
   }
+  if ((h_l == h_r && current == 'h') || (s_l == s_r && current == 's') || (l_l == l_r && current == 'l')) {
+    current = current == 'h' ? 's' : current == 's' ? 'l' : 'h';
+    return;
+  }
+  var left_h = h_l;
+  var left_s = s_l;
+  var left_l = l_l;
+  var right_h = h_r;
+  var right_s = s_r;
+  var right_l = l_r;
   if (current == 'h') {
-    left.style.backgroundColor = 'hsl(' + h_l + 'deg, ' + (s_l + s_r) / 2 + '%, ' + (l_l + l_r) / 2 + '%)';
-    right.style.backgroundColor = 'hsl(' + h_r + 'deg, ' + (s_l + s_r) / 2 + '%, ' + (l_l + l_r) / 2 + '%)';
-    console.log("hue");
-    console.log('hsl(' + h_l + 'deg, ' + (s_l + s_r) / 2 + '%, ' + (l_l + l_r) / 2 + '%)', 'hsl(' + h_r + 'deg, ' + (s_l + s_r) / 2 + '%, ' + (l_l + l_r) / 2 + '%)');
+    left_s = right_s = Math.round((s_l + s_r) / 2);
+    left_l = right_l = Math.round((l_l + l_r) / 2);
   } else if (current == 's') {
-    left.style.backgroundColor = 'hsl(' + (h_l + h_r) / 2 + 'deg, ' + s_l + '%, ' + (l_l + l_r) / 2 + '%)';
-    right.style.backgroundColor = 'hsl(' + (h_l + h_r) / 2 + 'deg, ' + s_r + '%, ' + (l_l + l_r) / 2 + '%)';
-    console.log("saturation");
-    console.log('hsl(' + (h_l + h_r) / 2 + 'deg, ' + s_r + '%, ' + (l_l + l_r) / 2 + '%)', 'hsl(' + (h_l + h_r) / 2 + 'deg, ' + s_l + '%, ' + (l_l + l_r) / 2 + '%)');
+    left_h = right_h = Math.round((h_l + h_r) / 2);
+    left_l = right_l = Math.round((l_l + l_r) / 2);
   } else if (current == 'l') {
-    left.style.backgroundColor = 'hsl(' + (h_l + h_r) / 2 + 'deg, ' + (s_l + s_r) / 2 + '%, ' + l_l + '%)';
-    right.style.backgroundColor = 'hsl(' + (h_l + h_r) / 2 + 'deg, ' + (s_l + s_r) / 2 + '%, ' + l_r + '%)';
-    console.log("lightness");
-    console.log('hsl(' + (h_l + h_r) / 2 + 'deg, ' + (s_l + s_r) / 2 + '%, ' + l_l + '%)', 'hsl(' + (h_l + h_r) / 2 + 'deg, ' + (s_l + s_r) / 2 + '%, ' + l_r + '%)');
+    left_h = right_h = Math.round((h_l + h_r) / 2);
+    left_s = right_s = Math.round((s_l + s_r) / 2);
   }
-  console.log(left.style.backgroundColor, right.style.backgroundColor);
+  var left_color = 'hsl(' + left_h + 'deg, ' + left_s + '%, ' + left_l + '%)';
+  var right_color = 'hsl(' + right_h + 'deg, ' + right_s + '%, ' + right_l + '%)';
+  left.style.backgroundColor = left.getElementsByTagName("h2")[0].innerHTML = left_color;
+  right.style.backgroundColor = right.getElementsByTagName("h2")[0].innerHTML = right_color;
+  console.log(left_color, right_color);
 }
 
 left.onmousedown = function () {
@@ -67,16 +76,16 @@ right.onmousedown = function () {
         h_r = 270;
         first = false;
       } else {
-        h_l = Math.floor((h_l + h_r) / 2);
+        h_l = Math.ceil((h_l + h_r) / 2);
       }
       current = 's';
       break;
     case 's':
-      s_l = Math.floor((s_l + s_r) / 2);
+      s_l = Math.ceil((s_l + s_r) / 2);
       current = 'l';
       break;
     case 'l':
-      l_l = Math.floor((l_l + l_r) / 2);
+      l_l = Math.ceil((l_l + l_r) / 2);
       current = 'h';
       break;
   }

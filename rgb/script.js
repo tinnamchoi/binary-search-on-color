@@ -21,26 +21,20 @@ function updateColor() {
   var right_g = g_r;
   var right_b = b_r;
   if (current == 'r') {
-    left_g = Math.round((g_l + g_r) / 2);
-    left_b = Math.round((b_l + b_r) / 2);
-    right_g = Math.round((g_l + g_r) / 2);
-    right_b = Math.round((b_l + b_r) / 2);
+    left_g = right_g = Math.round((g_l + g_r) / 2);
+    left_b = right_b = Math.round((b_l + b_r) / 2);
   } else if (current == 'g') {
-    left_r = Math.round((r_l + r_r) / 2);
-    left_b = Math.round((b_l + b_r) / 2);
-    right_r = Math.round((r_l + r_r) / 2);
-    right_b = Math.round((b_l + b_r) / 2);
+    left_r = right_r = Math.round((r_l + r_r) / 2);
+    left_b = right_b = Math.round((b_l + b_r) / 2);
   } else if (current == 'b') {
-    left_r = Math.round((r_l + r_r) / 2);
-    left_g = Math.round((g_l + g_r) / 2);
-    right_r = Math.round((r_l + r_r) / 2);
-    right_g = Math.round((g_l + g_r) / 2);
+    left_r = right_r = Math.round((r_l + r_r) / 2);
+    left_g = right_g = Math.round((g_l + g_r) / 2);
   }
-  left.style.backgroundColor = 'rgb(' + left_r + ',' + left_g + ',' + left_b + ')';
-  right.style.backgroundColor = 'rgb(' + right_r + ',' + right_g + ',' + right_b + ')';
-  left.getElementsByTagName("h2")[0].innerHTML = left.style.backgroundColor;
-  right.getElementsByTagName("h2")[0].innerHTML = right.style.backgroundColor;
-  console.log(left.style.backgroundColor, right.style.backgroundColor);
+  var left_color = 'rgb(' + left_r + ',' + left_g + ',' + left_b + ')';
+  var right_color = 'rgb(' + right_r + ',' + right_g + ',' + right_b + ')';
+  left.style.backgroundColor = left.getElementsByTagName("h2")[0].innerHTML = left_color;
+  right.style.backgroundColor = right.getElementsByTagName("h2")[0].innerHTML = right_color;
+  console.log(left_color, right_color);
 }
 
 left.onmousedown = function () {
