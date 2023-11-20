@@ -15,3 +15,12 @@ if (type == 'rgb') {
 } else {
   document.getElementById('result').innerHTML = 'Invalid type';
 }
+document.getElementById('hex').innerHTML = RGBtoHEX(document.body.style.backgroundColor);
+
+function RGBtoHEX(rgb) {
+  const rgbArray = rgb.replace(/[^\d,]/g, '').split(',');
+  const r = parseInt(rgbArray[0]);
+  const g = parseInt(rgbArray[1]);
+  const b = parseInt(rgbArray[2]);
+  return `#${r.toString(16)}${g.toString(16)}${b.toString(16)}`.toUpperCase();
+}

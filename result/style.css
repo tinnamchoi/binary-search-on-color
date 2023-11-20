@@ -9,3 +9,7 @@ body {
 a {
   -webkit-text-stroke: 1px black;
 }
+
+h2 {
+  margin-top: -0.5em;
+}

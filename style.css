@@ -11,7 +11,7 @@ body {
 a {
   color: white;
   text-decoration: none;
-  font-size: min(32px, 8vh);
+  font-size: min(4vh, 32px, 4vw);
 }
 
 h1,
@@ -25,5 +25,5 @@ h1 {
 
 h2 {
   text-align: center;
-  font-size: min(48px, 16vh);
+  font-size: min(6vh, 48px, 6vw);
 }
