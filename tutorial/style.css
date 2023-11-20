@@ -1,0 +1,23 @@
+body {
+  height: 100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction: column;
+  background-color: #0a0f1e;
+  overflow: auto;
+}
+
+a {
+  -webkit-text-stroke: 1px black;
+  font-size: 32px;
+}
+
+h2 {
+  margin-top: -0.5em;
+}
+
+p {
+  width: 80vw;
+  font-size: 32px;
+}

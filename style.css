@@ -10,12 +10,14 @@ body {
 
 a {
   color: white;
-  text-decoration: none;
+  text-decoration-color: white;
+  text-decoration-thickness: 1px;
   font-size: min(4vh, 32px, 4vw);
 }
 
 h1,
 h2 {
+  text-align: center;
   -webkit-text-stroke: 2px black;
 }
 
@@ -24,6 +26,5 @@ h1 {
 }
 
 h2 {
-  text-align: center;
   font-size: min(6vh, 48px, 6vw);
 }
