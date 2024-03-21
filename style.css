@@ -28,3 +28,7 @@ h1 {
 h2 {
   font-size: min(6vh, 48px, 6vw);
 }
+
+* {
+  touch-action: manipulation;
+}
